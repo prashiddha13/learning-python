@@ -19,5 +19,5 @@ while time <= 0:
 
 CI = P * ((1 + rate/100) ** time) 
 
-# Hya tala ',' le european style ma comma haldinxa in the amount. And '.2f' le chai decimal lai 2 digits samma round garxa. same work as round function. 
+# Here, ',' adds commas to the amount in European style, and '.2f' rounds the decimal to 2 digits, doing the same work as the round() function.
 print(f"The compound interest after {time} years is NPR {CI:,.2f}")

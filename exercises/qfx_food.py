@@ -1,4 +1,4 @@
-# Menu ko items lai chai keys vando raixa and paxadi ko associated value lai chai value nai vando raich which does not necessiraly have to be a value in literal form, but can also be a string and other things. 
+# The first part of the dictionary (before ':') is called key, and the second part is called value.  
 #First we build the menu using dictionary. 
 menu = { "Popcorn-S" : 349, 
 "Popcorn-M" : 449,
@@ -39,7 +39,7 @@ while True:
 
         item, price = list(menu.items())[cartnum - 1] # .items() can be used to pick out whatever we want from the dict. here item is the first element and price is the second element of the index [cartnum -1].
         quant = int(input(f"How many {item}(s) would you like to buy?: "))
-        cart.append((item, price, quant)) #I guess this is like appending tuple within a tuple. not so sure. 
+        cart.append((item, price, quant)) #I guess this is like appending tuple within a tuple.
     else: 
         print("The input is invalid. Try again. ")
 
