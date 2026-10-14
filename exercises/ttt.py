@@ -47,17 +47,20 @@ def main():
                 print("Please enter numbers between 1 and 9 to register your input. ")
                 continue
 
-            try:
-                if box[playerO - 1] == ' ':
-                    box[playerO - 1] = 'O'
-                else:
-                    print("Box is occupied.")
-                    continue
+            if playerO > 0:
+                try:
+                    if box[playerO - 1] == ' ':
+                        box[playerO - 1] = 'O'
+                    else:
+                        print("Box is occupied.")
+                        continue
 
-                if not box[playerO - 1] == ' ':     
-                    break
-            except IndexError:
-                print("Please enter numbers between 1 and 9 to register your input. ")
+                    if not box[playerO - 1] == ' ':     
+                        break
+                except IndexError:
+                    print("Please enter numbers between 1 and 9 to register your input. ")
+            elif playerO <= 0: 
+                print("Please enter numbers between 1 and 9 to register your input.")
 
         while X:
             try:
@@ -65,19 +68,21 @@ def main():
             except (ValueError, UnboundLocalError):
                 print("Please enter numbers between 1 and 9 to register your input. ")
                 continue
+            if playerX > 0:
+                try:
+                    if box[playerX - 1] == ' ':
+                        box[playerX - 1] = 'X'
+                    else:
+                        print("Box is occupied.")
+                        continue
+                        
+                    if not box[playerX - 1] == ' ':               
+                        break
+                except IndexError:
+                    print("Please enter numbers between 1 and 9 to register your input. ")
+            elif playerX <= 0:
+                print("Please enter numbers between 1 and 9 to register your input.")
 
-            try:
-                if box[playerX - 1] == ' ':
-                    box[playerX - 1] = 'X'
-                else:
-                    print("Box is occupied.")
-                    continue
-                    
-                if not box[playerX - 1] == ' ':               
-                    break
-            except IndexError:
-                print("Please enter numbers between 1 and 9 to register your input. ")
-        
         verification = verify()
 
         if verification == "over" or verification == "tie":
